@@ -10,7 +10,7 @@
 	<p>מזל טוב ליום הולדתך ה- 22! בשביל לראות את המכתב שכתבתי לך, עלייך להזין שם משתמש וסיסמא.</p>
 	<form autocomplete="off" action="letter.php" method="post" id="form">
 	<?php
-		if (isset($_SESSION["msg"])){
+		if (isset($_SESSION["msg"])){ // There is a message if the username or password were wrong in the letter.php page
 			echo '<div id="red">' . $_SESSION["msg"] . '</div>';
 			unset ($_SESSION["msg"]);
 		}

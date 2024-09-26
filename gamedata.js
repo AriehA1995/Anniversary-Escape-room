@@ -1,3 +1,7 @@
+/*
+This is a javascript file the manage the display of indices when clicking on places on the map
+call the update.php API to update the status of a place
+*/
 $(function(){
 	$(".place").click(function(event){
 		id = $(event.target).parent().attr("id");
@@ -72,7 +76,6 @@ function message(title = "כותרת", content = "תוכן", clue = false){
 						counter = counter[0] + "/" + counter[1];
 						$(".fclue.counter").text(counter);
 					}
-					// the left is working but not the right one. additionally, in the start, the nice button not working.
 				}
 			});
 		}

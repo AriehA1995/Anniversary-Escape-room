@@ -1,6 +1,10 @@
 ﻿<?php
+/*
+This file checks if the username and the password are correct.
+If yes, show the letter. Else, redirect to the form page.
+*/
 	session_start();
-	if (!isset($_POST["sub"])){
+	if (!isset($_POST["sub"])){ //username and password not posted
 		header ("location:form.php");
 		exit();
 	}
@@ -24,7 +28,7 @@
 	</html>
 <?php
 	}
-	else {
+	else { // incorrect username or password
 		$_SESSION["msg"] = "אחד הפרטים שהזנת שגויים. אנא נסי שנית.";
 		header ("location:form.php");
 		exit();

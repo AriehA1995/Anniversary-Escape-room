@@ -1,4 +1,8 @@
 <?php
+/*
+This file was used to make modifications at the places.json file
+it is not a part of the project
+*/
 	function wi ($x, $a){
 		return $x-(0.3*$a);
 	}

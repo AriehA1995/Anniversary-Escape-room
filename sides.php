@@ -1,5 +1,8 @@
 <?php
-	if (isset($_SESSION["save"]) && $_SESSION["save"]){
+/*
+This page design the sides of the game
+*/
+	if (isset($_SESSION["save"]) && $_SESSION["save"]){ // check if the user saved some suggestions
 		$usersave = $_SESSION["usersave"];
 		$passsave = $_SESSION["passsave"];
 	}
@@ -10,6 +13,12 @@
 	$clues = json_decode(file_get_contents("indice.json"), true);
 	$discovered = array();
 	$i = 0;
+	/*
+	The places are in the file places.json
+	Every place is connectes to one indice, or an array of indices
+	The indice details are in the file indice.json
+	if the place is discovered, the status is 1
+	*/
 	foreach ($places as $city){
 		if (isset($city->status)){
 			if ($city->status == 1){
@@ -27,20 +36,23 @@
 		}
 	}
 	$totalSee = 0;
+	// totalSee is how much indices were discovered
 	foreach ($discovered as $disco){
 		if ($disco["id"] != "X0" && $disco["id"] != "G1"){
+			// G1 is the helicopter, X0 are all the places without indice
 			$totalSee++;
 		}
 	}
-	$totalVisit = count($discovered);
-	$counterSee = $totalSee . "/" . (count($clues)-2);
+	$totalVisit = count($discovered); // this is how much places were discovered
+	$counterSee = $totalSee . "/" . (count($clues)-2); // 2 clues are G1 and X0 that are not relevant
+	// for calculate how much indices there are in total
 	$counterVisit = $totalVisit . "/" . (count($places) + count($places[1]->clue) + count($places[3]->clue) + count($places[5]->clue) -3);
 ?>
 <aside id="right">
 	<section id="links">
 		<a href="form.php"><button class="link">חזרה לטופס הכניסה</button></a>
 	<?php
-		if ($page == "city"){
+		if ($page == "city"){ // check if it is the main page
 			echo '<a href="game.php"><button class="link">חזרה למפה</button></a>';
 		}
 		else {

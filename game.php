@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	/*
+	This is the main page of the game.
+	*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +14,7 @@
 	<script type="text/javascript" src="gamedata.js"></script>
 	<?php
 		if (!isset($_SESSION["start"]) || $_SESSION["start"] != true){
-			$_SESSION["start"] = true;
+			$_SESSION["start"] = true; // this is the first time the user is on this page
 	?>
 	<script type="text/javascript">
 		var startTitle = "שכחת סיסמא??";
@@ -67,7 +70,7 @@
 				echo "</div>\n\t";
 			}
 		}
-		$page = "game";
+		$page = "game"; // this is needed for sides.php page
 		include("sides.php");
 	?>
 	</article>

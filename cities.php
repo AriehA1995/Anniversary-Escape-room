@@ -1,10 +1,13 @@
 <?php
+/*
+This page is where cities are displayed
+*/
 	session_start();
 	if (isset($_GET["id"])){
 		$id = $_GET["id"];
 	}
 	else {
-		$id = "1";
+		$id = "1"; // Jerusalem default city
 	}
 	$places = json_decode(file_get_contents("places.json"));
 	$homes = $places[$id]->clue;
@@ -51,7 +54,7 @@
 			echo "\t\t".'<div class="home" name="' . $home->name . '" style="left: ' . $home->coordonee[0] . 'px; top: ' . $home->coordonee[1] . 'px;" id="' . $index . '">';
 			echo '<div class="point"></div>'."</div>\n";
 		}
-		$page = "city";
+		$page = "city"; // needed for sides.php
 		include("sides.php");
 	?>
 	</article>

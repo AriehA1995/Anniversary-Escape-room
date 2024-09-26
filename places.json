@@ -8,7 +8,7 @@
             120
         ],
         "clue": "G1",
-        "status": 0
+        "status": 1
     },
     {
         "name": "jerusalem",
@@ -270,7 +270,7 @@
                     421
                 ],
                 "clue": "U5",
-                "status": 0
+                "status": 1
             },
             {
                 "name": "avraham",
@@ -281,7 +281,7 @@
                     270
                 ],
                 "clue": "X0",
-                "status": 0
+                "status": 1
             },
             {
                 "name": "ulpena",
@@ -292,7 +292,7 @@
                     228
                 ],
                 "clue": "P10",
-                "status": 0
+                "status": 1
             },
             {
                 "name": "yeshiva",
@@ -303,7 +303,7 @@
                     112
                 ],
                 "clue": "X0",
-                "status": 0
+                "status": 1
             }
         ]
     },
@@ -349,7 +349,7 @@
             552
         ],
         "clue": "U7",
-        "status": 0
+        "status": 1
     },
     {
         "name": "tel aviv",
@@ -371,7 +371,7 @@
             209
         ],
         "clue": "X0",
-        "status": 0
+        "status": 1
     },
     {
         "name": "eilat",
@@ -382,7 +382,7 @@
             1339
         ],
         "clue": "X0",
-        "status": 0
+        "status": 1
     },
     {
         "name": "tiberiad",
@@ -481,7 +481,7 @@
             730
         ],
         "clue": "X0",
-        "status": 0
+        "status": 1
     },
     {
         "name": "ariel",

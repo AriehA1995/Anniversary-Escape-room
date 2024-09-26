@@ -1,4 +1,19 @@
 <?php
+
+/*
+This page is a API that can update the status of a place.
+The parameters are:
+id = the id of the place - a number given by the order of the places file can also be "all"
+status = the status to be updated. can be 1 or 0
+hid = used in a city with multiple indices
+
+update the places.json file according to the request
+
+return a json object with 2 keys:
+code = can be "changed" or "no changes"
+data = all the content of the updated places.json file
+
+*/
 	class response {
 		public $code;
 		public $data;
@@ -33,7 +48,7 @@
 			return json_encode($answer, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 		}
 		
-	//check if there is a place with this id. if not, no change will be started
+	//check if there is a place with this id. if not, no change will happen
 		elseif (!isset($places[$placeId])){
 			$answer->code = "no changes";
 			$answer->data = $places;
@@ -63,9 +78,11 @@
 		}
 		return json_encode($answer, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
+	// the noaction variable is used if we get access to the file via php.
+	// should be true if we want to use the updateStatus function and not to access the API
 	if (!isset ($noaction) || $noaction == false){
 		if (!isset($_GET["id"]) || !isset($_GET["status"])){
-			echo updateStatus("a",1);
+			echo updateStatus("a",1); // no change
 		}
 		else {
 			$id = $_GET["id"];
