@@ -12,6 +12,6 @@ An interactive digital escape room where users solve puzzles to find a password.
 1. Install PHP server
 2. Put the project into htdocs file
 3. Run the server
-4. Go to localhost/your_folder_name
+4. Go to localhost/Anniversary-Escape-room
 ## Demo
 View Demo in Hebrew: https://youtu.be/MIFJEQwOiIk
